@@ -7,27 +7,33 @@
     <title>Document</title>
   </head>
   <body>
-    <main class="mainSection">
-      <h2 id="heading">Tic Tac Toe</h2>
-      <div id="winner" class="winnerPlayer hidden"></div>
-      <button id="new-game" class="newGameBtn hidden">New Game</button>
-      <div class="boxes">
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
+    <main>
+      <div class="container">
+        <h2 id="heading">Tic Tac Toe</h2>
+        <div class="board">
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
+      </div>
+      <div class="winnerDisplay">
+        <h2 id="winner" class="winnerPlayer hidden"></h2>
+        <button id="new-game" class="newGameBtn hidden">New Game</button>
       </div>
       <div class="scoreBoard">
-        <h5>Score Board</h5>
-        <p id="scoreO">O : 0</p>
-        <p id="scoreX">X : 0</p>
+        <h5>Score Board :-</h5>
+        <p id="scoreO">O - 0</p>
+        <p id="scoreX">X - 0</p>
       </div>
-      <p>Made by <span>Devang Sathwara</span> with <span>&hearts;</span></p>
+      <div class="footer">
+        <p>Made by <span>Devang Sathwara</span> with <span>&hearts;</span></p>
+      </div>
     </main>
     <script src="./script.js"></script>
   </body>
