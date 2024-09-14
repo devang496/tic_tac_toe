@@ -125,3 +125,43 @@ h5, p {
 .hidden {
     display: none;
 }
+
+@media (max-width: 767px) {
+
+    .winnerDisplay {
+            margin-top: -1.2rem;
+        }
+
+    .scoreBoard {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .scoreBoard h5 {
+            font-size: 1.5rem;
+        }
+    
+        .scoreBoard p {
+            font-size: 1.5rem;
+        }
+
+    .footer {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+    
+        .footer_container span:nth-of-type(1) {
+            font-size: 0.719rem;
+            font-weight: bold;
+            color: rgb(5, 46, 95);
+        }
+    
+        .footer_container span:nth-of-type(2) {
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: rgb(193, 0, 0);
+        }
+}
