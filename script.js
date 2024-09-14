@@ -9,6 +9,8 @@ let winX = document.getElementById("scoreX");
 let countO = 0;
 let countX = 0;
 
+let cnt = 0; //To track draw
+
 const winPatterns = [
   [0, 1, 2],
   [3, 4, 5],
@@ -31,11 +33,17 @@ for (let box of boxes) {
       box.setAttribute("disabled", "true");
       turnO = true;
     }
-    checkWinner();
+    cnt++;
+    // console.log("Cnt : ", cnt);
+    let isWinner = checkWinner();
+    if (cnt === 9 && !isWinner) {
+      drawGame();
+    }
   });
 }
 
 newGameBtn.addEventListener("click", () => {
+  cnt = 0;
   for (let box of boxes) {
     box.innerText = "";
     box.removeAttribute("disabled");
@@ -50,8 +58,16 @@ const disableAllBoxes = () => {
   }
 };
 
+const drawGame = () => {
+  winnerHeading.innerText = `It's a tie!`;
+  newGameBtn.innerText = `Play Again`;
+  winnerHeading.classList.remove("hidden");
+  newGameBtn.classList.remove("hidden");
+};
+
 const showWinner = (winnerPlayer) => {
   winnerHeading.innerText = `Winner : ${winnerPlayer}`;
+  newGameBtn.innerText = `Next Game`;
   winnerHeading.classList.remove("hidden");
   newGameBtn.classList.remove("hidden");
 
@@ -80,9 +96,10 @@ const checkWinner = () => {
     const pos1Value = pos1.innerText;
     const pos2Value = pos2.innerText;
 
-    if (pos0Value && pos1Value && pos2Value) {
+    if (pos0Value != "" && pos1Value != "" && pos2Value != "") {
       if (pos0Value === pos1Value && pos1Value === pos2Value) {
         showWinner(pos0Value);
+        return true;
       }
     }
   });
